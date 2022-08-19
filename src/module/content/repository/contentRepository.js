@@ -1,8 +1,6 @@
-const Character = require('../../character/entity/character');
-const Genre = require('../../genre/entity/Genre');
 const { fromModelToEntity } = require('../mapper/contentMapper');
 
-module.exports = class contentRepository {
+module.exports = class ContentRepository {
   constructor(contentModel, genreModel, characterModel) {
     this.contentModel = contentModel;
     this.genreModel = genreModel;

@@ -1,6 +1,6 @@
 const { fromModelToEntity } = require('../mapper/characterMapper');
 
-module.exports = class characterRepository {
+module.exports = class CharacterRepository {
   constructor(characterModel, contentModel) {
     this.characterModel = characterModel;
     this.contentModel = contentModel;
@@ -66,6 +66,5 @@ module.exports = class characterRepository {
 
     });
     return characters;
-    return characters.map(fromModelToEntity);
   }
 };

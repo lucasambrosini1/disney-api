@@ -1,7 +1,7 @@
 const { fromDataToEntity } = require('../mapper/userMapper');
 const { validateLogin, validateRegister } = require('../../../validators/authValidators');
 
-module.exports = class userController {
+module.exports = class UserController {
   /**
 * @param (import("../service/userService")) userService
      */

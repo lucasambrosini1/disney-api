@@ -2,7 +2,7 @@ const sendWelcomeMail = require('../../../utils/mailService');
 const { hashPassword, validatePassword } = require('../../../utils/encryptService');
 const { signToken } = require('../../../utils/jwt');
 
-module.exports = class userService {
+module.exports = class UserService {
   constructor(userRepository) {
     this.userRepository = userRepository;
   }

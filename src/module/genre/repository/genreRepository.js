@@ -1,6 +1,6 @@
 const { fromModelToEntity } = require('../mapper/genreMapper');
 
-module.exports = class genreRepository {
+module.exports = class GenreRepository {
   constructor(genreModel, contentModel) {
     this.genreModel = genreModel;
     this.contentModel = contentModel;

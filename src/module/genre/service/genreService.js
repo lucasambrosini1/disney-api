@@ -1,6 +1,4 @@
-const Genre = require('../entity/genre');
-
-module.exports = class genreService {
+module.exports = class GenreService {
   constructor(genreRepository) {
     this.genreRepository = genreRepository;
   }

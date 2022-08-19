@@ -1,6 +1,4 @@
-const Character = require('../entity/character');
-
-module.exports = class characterService {
+module.exports = class CharacterService {
   constructor(characterRepository) {
     this.characterRepository = characterRepository;
   }

@@ -21,8 +21,8 @@ module.exports = class GenreController {
     const ROUTE = this.ROUTE_BASE;
     app.get(`${ROUTE}`, authMiddleware, this.index.bind(this));
     app.get(`${ROUTE}/view/:id`, authMiddleware, validateView, this.view.bind(this));
-    app.post(`${ROUTE}/save`, authMiddleware, validateSave, this.uploadMiddleware.single('photo'), this.save.bind(this));
-    app.patch(`${ROUTE}/edit/:id`, authMiddleware, validateEdit, this.uploadMiddleware.single('photo'), this.edit.bind(this));
+    app.post(`${ROUTE}/save`, authMiddleware, validateSave, this.uploadMiddleware.single('image'), this.save.bind(this));
+    app.patch(`${ROUTE}/edit/:id`, authMiddleware, validateEdit, this.uploadMiddleware.single('image'), this.edit.bind(this));
     app.delete(`${ROUTE}/delete/:id`, authMiddleware, validateDelete, this.delete.bind(this));
   }
 

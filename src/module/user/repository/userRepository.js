@@ -1,6 +1,6 @@
 const { fromModelToEntity } = require('../mapper/userMapper');
 
-module.exports = class userRepository {
+module.exports = class UserRepository {
   constructor(userModel) {
     this.userModel = userModel;
   }
