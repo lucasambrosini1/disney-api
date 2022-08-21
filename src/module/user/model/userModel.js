@@ -19,6 +19,7 @@ class UserModel extends Model {
         username: {
           type: DataTypes.STRING,
           allowNull: false,
+          unique: true,
         },
         name: {
           type: DataTypes.STRING,
@@ -35,6 +36,7 @@ class UserModel extends Model {
         email: {
           type: DataTypes.STRING,
           allowNull: false,
+          unique: true,
         },
       },
       {

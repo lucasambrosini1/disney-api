@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const swaggerUI = require('swagger-ui-express');
 const swaggerSpec = require('../swaggerSpec.json');
 const configureDependencyInjection = require('./config/di');
@@ -10,7 +11,7 @@ const { initGenreModule } = require('./module/genre/module');
 
 const app = express();
 const port = process.env.PORT || 3000;
-
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -28,8 +29,5 @@ app.use((err, req, res, next) => {
   res.json(err);
 });
 
+app.get('/', (req, res) => res.redirect('/api-docs'));
 app.listen(port, () => console.log(`Server listening at http://localhost:${port}`));
-
-/*
-TODO: bcrypt, jwt, mail, return y push con asociaciones, validaciones, doc y tests
-*/

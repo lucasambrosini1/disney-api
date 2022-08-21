@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha || true",
     "schema:migrate": "sequelize-cli db:migrate --config=./src/config/config.js --migrations-path=./data/migrations --env=development",
     "schema:sync": "node src/cli/init.db.js",
     "start": "nodemon src/app.js"
@@ -14,6 +14,9 @@
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",
     "bcrypt": "^5.0.1",
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-validator": "^6.14.2",

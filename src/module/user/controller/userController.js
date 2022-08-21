@@ -46,6 +46,10 @@ module.exports = class UserController {
     try {
       const { username, password } = req.body;
       const token = await this.userService.login(username, password);
+      if (!token) {
+        const message = 'Invalid username or password';
+        res.json(message);
+      }
       const data = {
         username, token,
       };
@@ -59,8 +63,8 @@ module.exports = class UserController {
     try {
       const data = { ...req.body };
       const user = fromDataToEntity(data);
-      const rta = await this.userService.save(user);
-      res.json(rta.id);
+      const { id, username } = await this.userService.save(user);
+      res.json({ id, username });
     } catch (e) {
       next(e);
     }

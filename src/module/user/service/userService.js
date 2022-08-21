@@ -11,6 +11,7 @@ module.exports = class UserService {
     const {
       password, email, name, lastname,
     } = user;
+
     if (user === undefined) {
       throw new Error('User is not defined');
     }

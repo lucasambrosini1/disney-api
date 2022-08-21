@@ -9,10 +9,10 @@ const sendMail = async (msg) => {
 const sendWelcomeMail = async (userMail, name, lastname) => {
   const msg = {
     to: userMail,
-    from: 'disney@api.com',
+    from: process.env.SENDGRID_MAIL,
     subject: 'WELCOME TO DISNEY API',
     text: `Hi ${name} ${lastname}, you have successfully registered!`,
-    html: '',
+    html: '<p>Thanks!</p>',
 
   };
   await sendMail(msg);

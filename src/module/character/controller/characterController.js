@@ -50,8 +50,8 @@ module.exports = class CharacterController {
     try {
       const data = { ...req.body };
       const character = fromDataToEntity(data);
-      await this.characterService.save(character);
-      res.json('Character created');
+      const { id } = await this.characterService.save(character);
+      res.json(id);
     } catch (e) {
       next(e);
     }
@@ -74,6 +74,7 @@ module.exports = class CharacterController {
     try {
       const { id } = req.params;
       await this.characterService.deleteById(id);
+      res.json('Character deleted');
     } catch (e) {
       next(e);
     }

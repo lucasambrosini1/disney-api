@@ -53,9 +53,8 @@ module.exports = class ContentController {
     try {
       const data = { ...req.body };
       const content = fromDataToEntity(data);
-      await this.contentService.save(content);
-      const rta = 'OK';
-      res.json(rta);
+      const { id } = await this.contentService.save(content);
+      res.json(id);
     } catch (e) {
       next(e);
     }
